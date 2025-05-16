@@ -16,7 +16,7 @@ export const prerender = false;
         <meta property="og:title" content="Ryujinx - Download" />
         <meta property="og:url" content="https://ryujinx.app/download" />
         <meta property="twitter:url" content="https://ryujinx.app/download" />
-        <meta property="twitter:title" content="Ryujinx - Nintendo Switch Emulator" />
+        <meta property="twitter:title" content="Ryujinx - Nintendo Switch 1 Emulator" />
         <meta name="description"content="Download Ryujinx for Windows, MacOS, Linux, and Linux ARM."/>
         <meta name="og:description"content="Download Ryujinx for Windows, MacOS, Linux, and Linux ARM.."/>
         <meta name="twitter:description"content="Download Ryujinx for Windows, MacOS, Linux, and Linux ARM."/>
@@ -35,7 +35,7 @@ backgroundColor="#150E2A"
     <div class="center">
         <h1 class="main-heading">Get Ryujinx</h1>
         <p class="main-heading-sub">
-            Download Ryujinx for windows, macOS, linux, and linux arm<br />
+            Download Ryujinx for Windows 10 & 11, macOS, and Linux.<br />
         </p>
         <Cta isDownloadPage />
     </div>
@@ -44,14 +44,20 @@ backgroundColor="#150E2A"
             name="Windows"
             stores={[
                 {
-                    name: "Download",
+                    name: "Download x64",
                     url: Consts.WINDOWS_URL,
                     primary: true,
                 },
+                {
+                    name: "Download ARM",
+                    url: Consts.WINDOWSARM_URL,
+                    primary: true,
+                }
             ]}
         >
             <p slot="description" class="description">
                 Available for Windows 10 and 11.
+                Most users will need the x64 version.
             </p>
         </DownloadTile>
         <DownloadTile
@@ -65,41 +71,45 @@ backgroundColor="#150E2A"
             ]}
         >
             <p slot="description" class="description">
-                Apple Silicon and Intel Macs supported.
+                Only Apple Silicon Macs are properly supported.
             </p>
         </DownloadTile>
         <DownloadTile
-            name="Linux"
+            name="Linux (normal)"
             stores={[
                 {
-                    name: "Download",
+                    name: "Download x64",
                     url: Consts.LINUX_URL,
                     primary: true,
                 },
                 {
-                    name: "GitHub",
-                    url: Consts.GITHUB_URL,
-                    primary: false,
-                },
-            ]}
-        >
-            <p slot="description" class="description">
-                Available for most Linux distributions<br />
-                Appimage packages available on GitHub
-            </p>
-        </DownloadTile>
-        <DownloadTile
-            name="Linux ARM"
-            stores={[
-                {
-                    name: "Download",
+                    name: "Download ARM",
                     url: Consts.LINUXARM_URL,
                     primary: true,
                 },
             ]}
         >
             <p slot="description" class="description">
-                Download Ryujinx for ARM based operating systems
+                Standard Linux executable, with its dependencies, in a tarball.
+            </p>
+        </DownloadTile>
+        <DownloadTile
+            name="Linux (AppImage)"
+            stores={[
+                {
+                    name: "Download x64",
+                    url: Consts.APPIMAGE_URL,
+                    primary: true,
+                },
+                                {
+                    name: "Download ARM",
+                    url: Consts.APPIMAGEARM_URL,
+                    primary: true,
+                },
+            ]}
+        >
+            <p slot="description" class="description">
+                Available for most modern Linux distributions.
             </p>
         </DownloadTile>
     </div>

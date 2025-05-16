@@ -26,18 +26,24 @@ async function fetchLatestRelease() {
 
         const downloads = {
             WINDOWS_URL: assets.find(asset => asset.name.includes("win_x64.zip"))?.browser_download_url || "",
+            WINDOWSARM_URL: assets.find(asset => asset.name.includes("win_arm64.zip"))?.browser_download_url || "",
             MACOS_URL: assets.find(asset => asset.name.includes("macos_universal.app.tar.gz"))?.browser_download_url || "",
             LINUX_URL: assets.find(asset => asset.name.includes("linux_x64.tar.gz"))?.browser_download_url || "",
+            APPIMAGE_URL: assets.find(asset => asset.name.includes("-x64.AppImage"))?.browser_download_url || "",
             LINUXARM_URL: assets.find(asset => asset.name.includes("linux_arm64.tar.gz"))?.browser_download_url || "",
+            APPIMAGEARM_URL: assets.find(asset => asset.name.includes("-arm64.AppImage"))?.browser_download_url || "",
             GITHUB_URL: "https://github.com/Ryubing/Stable-Releases/releases/"
         };
 
         // update Consts class
     const constsContent = `export default class Consts {
     static readonly WINDOWS_URL = "${downloads.WINDOWS_URL}" as const;
+    static readonly WINDOWSARM_URL = "${downloads.WINDOWSARM_URL}" as const;
     static readonly MACOS_URL = "${downloads.MACOS_URL}" as const;
     static readonly LINUX_URL = "${downloads.LINUX_URL}" as const;
+    static readonly APPIMAGE_URL = "${downloads.APPIMAGE_URL}" as const;
     static readonly LINUXARM_URL = "${downloads.LINUXARM_URL}" as const;
+    static readonly APPIMAGEARM_URL = "${downloads.APPIMAGEARM_URL}" as const;
     static readonly GITHUB_URL = "${downloads.GITHUB_URL}" as const;
 }`;
 
