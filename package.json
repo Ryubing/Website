@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fetchr": "npx tsx src/lib/fetchreleases.ts"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.2.1",
