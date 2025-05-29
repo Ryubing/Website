@@ -1,8 +1,8 @@
 export async function GET() {
     return new Response(
         JSON.stringify({
-            canary: "Ryubing/Canary-Releases",
-            stable: "Ryubing/Stable-Releases"
+            canary: "iurehg8uetgyh8ui5e/cr",
+            stable: "iurehg8uetgyh8ui5e/sr"
         }),
         {
             headers: {
