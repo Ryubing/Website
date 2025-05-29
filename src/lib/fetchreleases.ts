@@ -4,7 +4,7 @@ import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const GITHUB_REPO = "Ryubing/Stable-Releases";
+const GITHUB_REPO = "iurehg8uetgyh8ui5e/sr";
 const API_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
 
 interface ReleaseAsset {
@@ -31,8 +31,7 @@ async function fetchLatestRelease() {
             LINUX_URL: assets.find(asset => asset.name.includes("linux_x64.tar.gz"))?.browser_download_url || "",
             APPIMAGE_URL: assets.find(asset => asset.name.includes("-x64.AppImage"))?.browser_download_url || "",
             LINUXARM_URL: assets.find(asset => asset.name.includes("linux_arm64.tar.gz"))?.browser_download_url || "",
-            APPIMAGEARM_URL: assets.find(asset => asset.name.includes("-arm64.AppImage"))?.browser_download_url || "",
-            GITHUB_URL: "https://github.com/Ryubing/Stable-Releases/releases/"
+            APPIMAGEARM_URL: assets.find(asset => asset.name.includes("-arm64.AppImage"))?.browser_download_url || ""
         };
 
         // update Consts class
@@ -44,7 +43,6 @@ async function fetchLatestRelease() {
     static readonly APPIMAGE_URL = "${downloads.APPIMAGE_URL}" as const;
     static readonly LINUXARM_URL = "${downloads.LINUXARM_URL}" as const;
     static readonly APPIMAGEARM_URL = "${downloads.APPIMAGEARM_URL}" as const;
-    static readonly GITHUB_URL = "${downloads.GITHUB_URL}" as const;
 }`;
 
 fs.writeFileSync(path.join(__dirname, "../lib/consts.ts"), constsContent);
