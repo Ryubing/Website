@@ -1,13 +1,16 @@
 ---
+
 interface Props {
     href: string
     primary: boolean
+    dl: string
 }
 
-const { href, primary } = Astro.props
+const { href, primary, dl } = Astro.props
+
 ---
 
-<a href={href} class:list={["dl-button", primary && "primary"]}>
+<a class:list={["dl-button", primary && "primary", dl]}>
     <slot />
 </a>
 
@@ -50,3 +53,8 @@ const { href, primary } = Astro.props
         }
     }
 </style>
+
+<script is:inline define:vars={{ href, dl }}>
+    document.querySelector("a." + dl)
+        .addEventListener('click', () => window.open(href, '_blank'))
+</script>

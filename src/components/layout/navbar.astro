@@ -2,6 +2,7 @@
 import NavLinks from "./navlinks.astro"
 import wordmark from "../../assets/wordmark.svg"
 import MenuIcon from "../../assets/menu.svg"
+
 import "./styleconstants.astro"
 ---
 
@@ -42,7 +43,18 @@ import "./styleconstants.astro"
             margin: 0 auto;
         }
 
+        .gitlab-logo {
+          display: flex;
+          width: 32px;
+          height: 32px;
+          transform: translateY(-5px);
+          gap: 1.5rem;
+          z-index: -1;
+          animation: slide-down 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
         .links {
+            transform: translateX(-35px);
             display: flex;
             gap: 1.5rem;
 
@@ -62,6 +74,7 @@ import "./styleconstants.astro"
         .wordmark {
             width: 140px;
             max-width: 250px;
+            transform: translateY(-5px);
             height: auto;
             display: block;
         }

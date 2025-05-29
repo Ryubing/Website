@@ -17,7 +17,7 @@ const { name, stores } = Astro.props
     <div class="cta">
         {
             stores.map((store) => (
-                <DownloadButton href={store.url} primary={store.primary}>
+                <DownloadButton href={store.url} primary={store.primary} dl={store.tag}>
                     {store.name}
                 </DownloadButton>
             ))
