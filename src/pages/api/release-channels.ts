@@ -9,7 +9,7 @@ export const GET: APIRoute = ({ params, request, redirect }) => {
     return new Response(
         JSON.stringify({
             canary: "iurehg8uetgyh8ui5e/cr",
-            stable: "iurehg8uetgyh8ui5e/sr"
+            stable: "Ryubing/Stable-Releases"
         }),
         {
             headers: {
