@@ -4,12 +4,15 @@ import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const GITHUB_REPO = "iurehg8uetgyh8ui5e/sr";
-const API_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
+const API_URL = `https://git.ryujinx.app/api/v4/projects/1/releases/permalink/latest`;
 
-interface ReleaseAsset {
+interface ReleaseAssets {
+    links: ReleaseAssetLink[];
+}
+
+interface ReleaseAssetLink {
     name: string;
-    browser_download_url: string;
+    url: string;
 }
 
 async function fetchLatestRelease() {
@@ -22,16 +25,16 @@ async function fetchLatestRelease() {
         });
 
         const data = await response.json();
-        const assets: ReleaseAsset[] = data.assets;
+        const assets: ReleaseAssets = data.assets;
 
         const downloads = {
-            WINDOWS_URL: assets.find(asset => asset.name.includes("win_x64.zip"))?.browser_download_url || "",
-            WINDOWSARM_URL: assets.find(asset => asset.name.includes("win_arm64.zip"))?.browser_download_url || "",
-            MACOS_URL: assets.find(asset => asset.name.includes("macos_universal.app.tar.gz"))?.browser_download_url || "",
-            LINUX_URL: assets.find(asset => asset.name.includes("linux_x64.tar.gz"))?.browser_download_url || "",
-            APPIMAGE_URL: assets.find(asset => asset.name.includes("-x64.AppImage"))?.browser_download_url || "",
-            LINUXARM_URL: assets.find(asset => asset.name.includes("linux_arm64.tar.gz"))?.browser_download_url || "",
-            APPIMAGEARM_URL: assets.find(asset => asset.name.includes("-arm64.AppImage"))?.browser_download_url || ""
+            WINDOWS_URL: assets.links.find(asset => asset.name.includes("win_x64.zip"))?.url || "",
+            WINDOWSARM_URL: assets.links.find(asset => asset.name.includes("win_arm64.zip"))?.url || "",
+            MACOS_URL: assets.links.find(asset => asset.name.includes("macos_universal.app.tar.gz"))?.url || "",
+            LINUX_URL: assets.links.find(asset => asset.name.includes("linux_x64.tar.gz"))?.url || "",
+            APPIMAGE_URL: assets.links.find(asset => asset.name.includes("-x64.AppImage"))?.url || "",
+            LINUXARM_URL: assets.links.find(asset => asset.name.includes("linux_arm64.tar.gz"))?.url || "",
+            APPIMAGEARM_URL: assets.links.find(asset => asset.name.includes("-arm64.AppImage"))?.url || ""
         };
 
         // update Consts class
