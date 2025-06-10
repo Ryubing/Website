@@ -1,9 +1,8 @@
 export default class Consts {
-    static readonly WINDOWS_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-win_x64.zip" as const;
-    static readonly WINDOWSARM_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-win_arm64.zip" as const;
-    static readonly MACOS_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-macos_universal.app.tar.gz" as const;
-    static readonly LINUX_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-linux_x64.tar.gz" as const;
-    static readonly APPIMAGE_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-x64.AppImage" as const;
-    static readonly LINUXARM_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-linux_arm64.tar.gz" as const;
-    static readonly APPIMAGEARM_URL = "https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.1/ryujinx-1.3.1-arm64.AppImage" as const;
+    static readonly WINDOWS_URL = "https://update.ryujinx.app/download/query?os=win&arch=x64&rc=stable" as const;
+    static readonly MACOS_URL = "https://update.ryujinx.app/download/query?os=mac&arch=arm64&rc=stable" as const;
+    static readonly LINUX_URL = "https://update.ryujinx.app/download/query?os=linux&arch=x64&rc=stable" as const;
+    static readonly APPIMAGE_URL = "https://update.ryujinx.app/download/query?os=linuxai&arch=x64&rc=stable" as const;
+    static readonly LINUXARM_URL = "https://update.ryujinx.app/download/query?os=linux&arch=arm64&rc=stable" as const;
+    static readonly APPIMAGEARM_URL = "https://update.ryujinx.app/download/query?os=linuxai&arch=arm64&rc=stable" as const;
 }
