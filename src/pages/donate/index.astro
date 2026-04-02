@@ -2,6 +2,7 @@
 import Footer from "../../components/layout/footer.astro"
 import Navbar from "../../components/layout/navbar.astro"
 import MarketingLayout from "../../components/layout/marketing.astro"
+import { Image } from 'astro:assets';
 
 export const prerender = false;
 ---
@@ -41,8 +42,8 @@ export const prerender = false;
         <div class="center"> <!-- if new tiles need to be added; change `center` to `tiles` and add new sub-divs with the class `do-tile` (shown below) -->
             <div class="do-tile">
                 <div class="header">
-                    <img src="https://avatars.githubusercontent.com/u/28578990?s=160&v=4" height="50" width="50"
-                         alt="greemdev">
+                    <Image src="https://avatars.githubusercontent.com/u/28578990?s=160&v=4" height="50" width="50"
+                         alt="greemdev" loading="eager"/>
                     <h2>GreemDev</h2>
                     <span class="role">Former Maintainer, Current Sys Admin</span>
                 </div>
