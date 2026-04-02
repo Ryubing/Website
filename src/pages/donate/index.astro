@@ -8,115 +8,144 @@ export const prerender = false;
 
 <head>
     <title>Ryujinx - Donate</title>
-    <meta charset="UTF-8" />
-    <meta property="og:site_name" content="Ryujinx" />
-    <meta property="og:title" content="Ryujinx - Donate" />
-    <meta property="og:url" content="https://ryujinx.app/donate" />
-    <meta property="twitter:url" content="https://ryujinx.app/donate" />
-    <meta property="twitter:title" content="Ryujinx - Donate" />
-    <meta name="description"content="Donate to support the Ryujinx project and help us continue improving the emulator."/>
-    <meta name="og:description"content="Donate to support the Ryujinx project and help us continue improving the emulator."/>
-    <meta name="twitter:description"content="Donate to support the Ryujinx project and help us continue improving the emulator."/>
-    <meta name="description"content="Donate to support the Ryujinx project and help us continue improving the emulator.">
-    <meta name="keywords" content="Ryujinx, nintendo switch emulator, nintendo switch, switch, switch emulator, emulator fork, ryubing, ldn, open-source"/>
+    <meta charset="UTF-8"/>
+    <meta property="og:site_name" content="Ryujinx"/>
+    <meta property="og:title" content="Ryujinx - Donate"/>
+    <meta property="og:url" content="https://ryujinx.app/donate"/>
+    <meta property="twitter:url" content="https://ryujinx.app/donate"/>
+    <meta property="twitter:title" content="Ryujinx - Donate"/>
+    <meta name="description"
+          content="Donate to support the Ryujinx project and help us continue improving the emulator."/>
+    <meta name="og:description"
+          content="Donate to support the Ryujinx project and help us continue improving the emulator."/>
+    <meta name="twitter:description"
+          content="Donate to support the Ryujinx project and help us continue improving the emulator."/>
+    <meta name="description"
+          content="Donate to support the Ryujinx project and help us continue improving the emulator.">
+    <meta name="keywords"
+          content="Ryujinx, nintendo switch emulator, nintendo switch, switch, switch emulator, emulator fork, ryubing, ldn, open-source"/>
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="author" content="Ryujinx" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Ryujinx"/>
+    <meta name="viewport" content="width=device-width"/>
 </head>
 <MarketingLayout backgroundColor="#150E2A">
-<Navbar />
-<div class="spacer"></div>
-<div class="lr-pad">
-    <div class="center">
-        <h1 class="main-heading">Donate</h1>
-        <p class="main-heading-sub">
-        Want to support the project? That's awesome, thank you for supporting us!<br />
-        </p>
+    <Navbar/>
+    <div class="spacer"></div>
+    <div class="lr-pad">
+        <div class="center">
+            <h1 class="main-heading">Donate</h1>
+            <p class="main-heading-sub">
+                Want to support the project? That's awesome, thank you for supporting us!<br/>
+            </p>
+        </div>
+        <div class="center"> <!-- if new tiles need to be added; change `center` to `tiles` and add new sub-divs with the class `do-tile` (shown below) -->
+            <div class="do-tile">
+                <div class="header">
+                    <img src="https://avatars.githubusercontent.com/u/28578990?s=160&v=4" height="50" width="50"
+                         alt="greemdev">
+                    <h2>GreemDev</h2>
+                    <span class="role">Former Maintainer, Current Sys Admin</span>
+                </div>
+                <div class="description" style="font-weight: 500;">
+                    Hey there,<br/><br/>
+                    I'm GreemDev.<br/><br/>
+                    I'm a 23 year old hobbyist .NET and JVM developer.<br/><br/>
+                    My main projects are a fork of <a href="https://github.com/gruke-build/src"
+                                                      style="text-decoration: underline; color: #74b9ff">NUKE</a>, and
+                    the
+                    Discord bot <a href="https://github.com/Polyhaze/Volte"
+                                   style="text-decoration: underline; color: #74b9ff">Volte</a>.
+                    <br/><br/>
+                    Additionally, I maintain the server & CI infrastructure for this project.
+                    This is what the donations to me go to.
+                    <br/><br/>
+                    I also created:
+                    <ul>
+                        <li>The <a href="https://github.com/Ryubing/UpdateServer"
+                                   style="text-decoration: underline; color: #74b9ff;">Update Server</a></li>
+                        <li>The <a href="https://github.com/Ryubing/RyujinxHelper"
+                                   style="text-decoration: underline;" class="ryu-gradient-text">Ryujinx Helper</a> Discord bot
+                        </li>
+                        <li>The <a href="https://github.com/GreemDev/GLI"
+                                   style="text-decoration: underline; color: #74b9ff">GLI</a> command-line tool
+                        </li>
+                        <li>The <a href="https://github.com/Ryubing/forgejo"
+                                   style="text-decoration: underline;" class="forgejo-gradient-text">fork of Forgejo</a> that hosts the
+                            project's code
+                        </li>
+                    </ul>
+                </div>
+                <div class="grow"/>
+                <div class="cta center">
+                    <iframe src="https://github.com/sponsors/GreemDev/button" title="Sponsor GreemDev" height="32"
+                            width="114" style="border: 0; border-radius: 6px;"/>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="tiles">
-    <div class="do-tile">
-        <div class="header">
-        <img src="https://avatars.githubusercontent.com/u/69540471?v=4" height="50" width="50" alt="donut">
-        <h2>Donut</h2>
-        <span class="role">Web developer</span>
-        </div>
-        <p class="description">
-            hi, im donut/claire<br><br>im a hobbyist web developer currently studying software development<br><br> i currently only develop the website ur currently on but plan on contributing to the emulator itself
-        </p>
-        <div class="grow"></div>
-        <div class="cta">
-            <a class="do-button primary" href="https://ko-fi.com/smoresdonut">
-            Donate
-        </a>
-        </div>
-    </div>
-    <div class="do-tile">
-        <div class="header">
-        <img src="https://avatars.githubusercontent.com/u/28578990?s=160&v=4" height="50" width="50" alt="greemdev">
-        <h2>Greemdev</h2>
-        <span class="role">Fork Maintainer</span>
-        </div>
-        <p class="description" style="font-weight: 500;">
-        Hey there,<br><br>
-        I'm GreemDev.<br><br>
-        I'm a 23 year old hobbyist .NET and JVM developer.<br><br>
-        My main projects are a fork of the discontinued Switch emulator <a href="https://git.ryujinx.app/ryubing/ryujinx" style="text-decoration: underline; color: #74b9ff">Ryujinx</a>, and the Discord bot <a href="https://github.com/Polyhaze/Volte" style="text-decoration: underline; color: #74b9ff">Volte</a>.
-        </p>
-        <div class="grow"></div>
-        <div class="cta">
-            <iframe src="https://github.com/sponsors/GreemDev/button" title="Sponsor GreemDev" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
-        </div>
-    </div>
-</div>
-</div>
-<Footer/>
-<style lang="scss">
-        .lr-pad {
-            max-width: min(130ch, 90vw);
-            margin: 0 auto;
-            padding-bottom: 50px;
-            display: grid;
-            gap: 4rem;
-            padding-bottom: 4rem;
-        }
-    
-        .spacer {
-            height: 12rem;
-        }
-    
-        .center {
-            display: block;
-            margin: 0 auto;
-            text-align: center;
-        }
-    
-        .main-heading {
-            font-size: 4rem;
-            font-weight: 750;
-            color: white;
-            line-height: 1;
-        }
-    
-        .main-heading-sub {
-            font-size: 1.5rem;
-            color: white;
-            opacity: 0.7;
-            margin-bottom: 4rem;
-            line-height: 1.5;
-        }
+    <Footer/>
+    <style lang="scss">
+
+      .ryu-gradient-text {
+        background: linear-gradient(to right, #02C5E5 0%, #FF5F56 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .forgejo-gradient-text {
+        background: linear-gradient(to right, #FF6600 0%, #CC0000 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .lr-pad {
+        max-width: min(130ch, 90vw);
+        margin: 0 auto;
+        padding-bottom: 50px;
+        display: grid;
+        gap: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .spacer {
+        height: 12rem;
+      }
+
+      .center {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .main-heading {
+        font-size: 4rem;
+        font-weight: 750;
+        color: white;
+        line-height: 1;
+      }
+
+      .main-heading-sub {
+        font-size: 1.5rem;
+        color: white;
+        opacity: 0.7;
+        margin-bottom: 4rem;
+        line-height: 1.5;
+      }
 
 
-        .tiles {
+      .tiles {
         display: grid;
         gap: 2rem;
         grid-template-columns: 1fr 1fr;
 
         @media (max-width: 1024px) {
-            grid-template-columns: 1fr;
+          grid-template-columns: 1fr;
         }
-    }
-    
-    .do-tile {
+      }
+
+      .do-tile {
         padding: 3rem;
         border-radius: 1rem;
         background-color: rgba(255, 255, 255, 0.082);
@@ -125,49 +154,49 @@ export const prerender = false;
         gap: 1rem;
 
         .grow {
-            flex-grow: 1;
+          flex-grow: 1;
         }
 
         .cta {
-            padding-top: 1rem;
+          padding-top: 1rem;
         }
 
         .description {
-            font-size: 1rem;
-            font-weight: 500;
+          font-size: 1rem;
+          font-weight: 500;
         }
 
-    }
+      }
 
-    .header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-direction: column;
-    }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-direction: column;
+      }
 
-    .header img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    }
+      .header img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
 
-    h2 {
+      h2 {
         font-size: 1.5rem;
         font-weight: 530;
         letter-spacing: 0.03em;
         color: white;
         margin: 0;
-    }
+      }
 
-    .role {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: -2px;
-}
+      .role {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: -2px;
+      }
 
-    .do-button {
+      .do-button {
         padding: 0.9rem 1.5rem;
         border-radius: 9999px;
         font-size: 1rem;
@@ -176,31 +205,32 @@ export const prerender = false;
         font-family: inherit;
         cursor: pointer;
         text-decoration: none;
-        transition:
-            background-color 0.2s,
-            filter 0.2s;
+        transition: background-color 0.2s,
+        filter 0.2s;
         display: inline-block;
         text-align: center;
         color: white;
         background-color: rgb(255 255 255 / 10%);
 
         &:hover {
-            background-color: rgb(255 255 255 / 20%);
+          background-color: rgb(255 255 255 / 20%);
         }
 
         &:active {
-            background-color: rgb(255 255 255 / 30%);
+          background-color: rgb(255 255 255 / 30%);
         }
 
         &.primary {
-            background: linear-gradient(180deg, #FF005C 0%, #9A0239 100%);
+          background: linear-gradient(180deg, #FF005C 0%, #9A0239 100%);
 
-            &:hover {
-                filter: brightness(1.1);
-            }
+          &:hover {
+            filter: brightness(1.1);
+          }
 
-            &:active {
-                filter: brightness(0.9);
-            }
+          &:active {
+            filter: brightness(0.9);
+          }
         }
-    }
+      }
+    </style>
+</MarketingLayout>
