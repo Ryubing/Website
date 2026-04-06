@@ -2,6 +2,10 @@
 import wordmark from "../../assets/wordmark.svg"
 import "./styleconstants.astro"
 import { Image } from 'astro:assets';
+import Consts from "@lib/consts.ts";
+
+const RyubingUrl = `https://${Consts.FORGEJO_HOST}/projects/Ryubing`
+const SetupGuideWiki = `${RyubingUrl}/wiki/Setup-&-Configuration-Guide`
 ---
 
 <footer>
@@ -13,7 +17,7 @@ import { Image } from 'astro:assets';
         <div class="links">
             <span>Get Started</span>
             <a href="/download">Download</a>
-            <a href="https://git.ryujinx.app/projects/Ryubing/wiki/Setup-%26-Configuration-Guide" target="_blank">Setup Guide</a>
+            <a href={SetupGuideWiki} target="_blank">Setup Guide</a>
         </div>
         <div class="links socials">
             <span>Socials</span>
@@ -23,7 +27,7 @@ import { Image } from 'astro:assets';
             <a href="https://legacy.git.ryujinx.app/ryubing/ryujinx">
                 GitLab (Legacy)
             </a>
-            <a href="https://git.ryujinx.app/projects/Ryubing">
+            <a href={RyubingUrl}>
                 Forgejo
             </a>
         </div>

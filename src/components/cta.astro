@@ -49,14 +49,11 @@ const { isDownloadPage = false } = Astro.props
 
 <div class="cta">
     {
-        // the href for CtaButton is a placeholder so Astro shuts the fuck up about invalid hrefs
-        // we give it a valid one in the js onclick
-
         // If we're on the download page, don't show the download button if the OS is unknown
         // as it only leads to the download page
         !(isDownloadPage && os === "unknown") && (
             <div class="dl-button">
-                <CtaButton href="p" label="Download" primary />
+                <CtaButton label="Download" primary />
             </div>
         )
     }

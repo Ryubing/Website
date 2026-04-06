@@ -8,11 +8,9 @@ interface Props {
 
 const { href, primary, dl } = Astro.props
 
-// the href is a placeholder so Astro shuts the fuck up about invalid hrefs
-// we give it a valid one in the js onclick
 ---
 
-<a class:list={["dl-button", primary && "primary", dl]} href="../assets/wordmark.svg">
+<a class:list={["dl-button", primary && "primary", dl]}>
     <slot />
 </a>
 
