@@ -21,7 +21,7 @@ export const PLATFORM_LINKS = {
         href: "/download",
     },
 }
-type PlaformLinksType = Record<string, { store?: string; href: string }>
+type PlatformLinksType = Record<string, { store?: string; href: string }>
 
 let os: string
 if (uaString.includes("Windows")) {
@@ -39,7 +39,7 @@ if (uaString.includes("Windows")) {
     os = "unknown"
 }
 
-const { href } = (PLATFORM_LINKS as PlaformLinksType)[os]
+const { href } = (PLATFORM_LINKS as PlatformLinksType)[os]
 
 interface Props {
     isDownloadPage?: boolean
