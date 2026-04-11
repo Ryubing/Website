@@ -1,12 +1,18 @@
 ---
-import GitLabIcon from "../../assets/gitlab.svg"
+import ForgejoIcon from "../../assets/forgejo.svg"
+
+import Consts from "../../lib/consts"
+
+const ServerUrl = `https://${Consts.FORGEJO_HOST}`
+const WikiHome = `${ServerUrl}/projects/Ryubing/wiki/home`
+const WikiFaq = `${ServerUrl}/projects/Ryubing/wiki/FAQ-&-Troubleshooting`
 ---
 
-<a href="https://git.ryujinx.app">
-    <img class="gitlab-logo" src={GitLabIcon.src} alt="GitLab" />
+<a href={ServerUrl}>
+    <img class="forgejo-logo" src={ForgejoIcon.src} alt="Forgejo" />
 </a>
 <a href="/download">Download</a>
 <a href="/donate">Donate</a>
 <a href="https://ldn.ryujinx.app/">LDN</a>
-<a href="https://git.ryujinx.app/ryubing/ryujinx/-/wikis/home">Wiki</a>
-<a href="https://git.ryujinx.app/ryubing/ryujinx/-/wikis/FAQ-&-Troubleshooting">FAQ</a>
+<a href={WikiHome}>Wiki</a>
+<a href={WikiFaq}>FAQ</a>

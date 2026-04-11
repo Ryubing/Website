@@ -1,26 +1,34 @@
 ---
 import wordmark from "../../assets/wordmark.svg"
 import "./styleconstants.astro"
+import { Image } from 'astro:assets';
+import Consts from "@lib/consts.ts";
+
+const RyubingUrl = `https://${Consts.FORGEJO_HOST}/projects/Ryubing`
+const SetupGuideWiki = `${RyubingUrl}/wiki/Setup-&-Configuration-Guide`
 ---
 
 <footer>
     <div class="copyright-section">
-        <a href="/"> <img src={wordmark.src} alt="Ryujinx" draggable="false" class="wordmark" /></a>
+        <a href="/"> <Image src={wordmark} alt="Ryujinx" draggable="false" class="wordmark" /></a>
         <div class="copyright">© {new Date().getFullYear()}</div>
     </div>
     <div class="links-section">
         <div class="links">
             <span>Get Started</span>
             <a href="/download">Download</a>
-            <a href="https://git.ryujinx.app/ryubing/ryujinx/-/wikis/Setup-&-Configuration-Guide" target="_blank">Setup Guide</a>
+            <a href={SetupGuideWiki} target="_blank">Setup Guide</a>
         </div>
         <div class="links socials">
             <span>Socials</span>
             <a href="https://discord.gg/c6sDayDFkt">
                 Discord
             </a>
-            <a href="https://git.ryujinx.app/ryubing/ryujinx">
-                GitLab
+            <a href="https://legacy.git.ryujinx.app/ryubing/ryujinx">
+                GitLab (Legacy)
+            </a>
+            <a href={RyubingUrl}>
+                Forgejo
             </a>
         </div>
     </div>

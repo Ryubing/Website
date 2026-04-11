@@ -1,6 +1,7 @@
 ---
 import Cta from "../components/cta.astro"
 import hero from "../assets/hero.png"
+import { Image } from 'astro:assets';
 ---
 
 <header>
@@ -9,7 +10,7 @@ import hero from "../assets/hero.png"
     <div class="top">
         <Cta />
     </div>
-    <img src={hero.src} alt="" class="hero" aria-hidden="true" />
+    <Image src={hero} alt="" class="hero" aria-hidden="true" loading=eager />
 </header>
 <style lang="scss">
     header {

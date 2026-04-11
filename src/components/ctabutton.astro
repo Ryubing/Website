@@ -1,55 +1,56 @@
 ---
 interface Props {
     label: string
-    href: string
+    href?: string
     primary?: boolean
 }
 
-const { label, href, primary } = Astro.props
+const {label, href, primary} = Astro.props
 ---
 
-<a href={href} class:list={['cta-button', primary && 'cta-button-primary']}>
-    <span class="cta-button-label">{label}</span>
-</a>
+{href
+    ? <a href={href} class:list={['cta-button', primary && 'cta-button-primary']}><span class="cta-button-label">{label}</span></a>
+    : <a class:list={['cta-button', primary && 'cta-button-primary']}><span class="cta-button-label">{label}</span></a>
+}
 
 <style lang="scss">
-    .cta-button {
-        backface-visibility: hidden;
-        border-radius: 12px;
-        width: 225px;
-        height: 55px;
-        background: #5865F2;
-        box-shadow: 0px 2px 4px rgba(0,0,0,0.7);
-        display: grid;
-        place-items: center;
-        will-change: transform;
+  .cta-button {
+    backface-visibility: hidden;
+    border-radius: 12px;
+    width: 225px;
+    height: 55px;
+    background: #5865F2;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+    display: grid;
+    place-items: center;
+    will-change: transform;
 
-        transition: filter 0.2s var(--easing), transform 0.2s var(--easing);
+    transition: filter 0.2s var(--easing), transform 0.2s var(--easing);
 
-        &:hover {
-            filter: brightness(0.9);
-            transform: scale(0.98);
-        }
-
-        &:active {
-            filter: brightness(0.8);
-            transform: scale(0.96);
-        }
-
-        &:link, &:visited {
-            text-decoration: none;
-        }
+    &:hover {
+      filter: brightness(0.9);
+      transform: scale(0.98);
     }
 
-    .cta-button-primary {
-        background: linear-gradient(180deg, #FF005C 0%, #9A0239 100%);
-        box-shadow: 0px 2px 4px rgba(0,0,0,0.7);
+    &:active {
+      filter: brightness(0.8);
+      transform: scale(0.96);
     }
 
-    .cta-button-label {
-        font-size: 1.4rem;
-        letter-spacing: 0.02em;
-        font-weight: 500;
-        color: white;
+    &:link, &:visited {
+      text-decoration: none;
     }
+  }
+
+  .cta-button-primary {
+    background: linear-gradient(180deg, #FF005C 0%, #9A0239 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .cta-button-label {
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    color: white;
+  }
 </style>
