@@ -9,7 +9,7 @@ import {
   SchemaConfig,
   StyleConfig
 } from "@/types";
-import { home } from "./index";
+import localFont from "next/font/local";
 
 // IMPORTANT: used for SEO in meta tags and schema
 const baseURL: string = "https://ryujinx.app";
@@ -31,39 +31,35 @@ const display: DisplayConfig = {
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {};
 
-// Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
-
-const heading = Geist({
+const heading = localFont({
+  src: "./Geist.woff2",
+  display: "swap",
   variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
 });
 
-const body = Geist({
+const body = localFont({
+  src: "./Geist.woff2",
+  display: "swap",
   variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
 });
 
-const label = Geist({
+const label = localFont({
+  src: "./Geist.woff2",
+  display: "swap",
   variable: "--font-label",
-  subsets: ["latin"],
-  display: "swap",
 });
 
-const code = Geist_Mono({
-  variable: "--font-code",
-  subsets: ["latin"],
+const code = localFont({
+  src: "./Geist.woff2",
   display: "swap",
+  variable: "--font-code",
 });
 
 const fonts: FontsConfig = {
-  heading: heading,
-  body: body,
-  label: label,
-  code: code,
+  heading,
+  body,
+  label,
+  code,
 };
 
 // default customization applied to the HTML in the main layout.tsx
