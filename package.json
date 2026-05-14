@@ -7,10 +7,15 @@
     "export": "next export",
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@once-ui-system/core": "latest",
+    "@opennextjs/cloudflare": "^1.19.9",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "classnames": "^2.5.1",
@@ -32,6 +37,7 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.25.0",
     "typescript": "^5.8.3",
-    "tzdata": "^1.0.44"
+    "tzdata": "^1.0.44",
+    "wrangler": "^4.90.1"
   }
 }

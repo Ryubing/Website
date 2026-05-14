@@ -39,3 +39,11 @@ yarn-error.log*
 next-env.d.ts
 
 !.env.example
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
