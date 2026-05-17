@@ -26,7 +26,7 @@ export class UpdateServerEndpoints {
         : { platform: "win", cpu: "x64" }
     } else if (userAgent.includes("Macintosh")) {
       return { platform: "mac", cpu: "arm64" }
-    if (userAgent.includes("Linux")) {
+    } else if (userAgent.includes("Linux")) {
       return userAgent.includes("aarch") || userAgent.includes("arm")
         ? { platform: "linux", cpu: "arm64" }
         : { platform: "linux", cpu: "x64" }
