@@ -15,29 +15,28 @@
   },
   "dependencies": {
     "@once-ui-system/core": "latest",
-    "@opennextjs/cloudflare": "^1.19.9",
+    "@opennextjs/cloudflare": "^1.19.11",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "classnames": "^2.5.1",
-    "cookie": "^1.0.2",
+    "cookie": "^1.1.1",
     "gray-matter": "^4.0.3",
-    "lint-staged": "^16.1.5",
-    "next": "^16.0.10",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.3",
-    "react-icons": "^5.5.0",
-    "sass": "^1.86.3",
-    "transliteration": "^2.3.5"
+    "lint-staged": "^17.0.5",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-icons": "^5.6.0",
+    "sass": "^1.100.0",
+    "transliteration": "^2.6.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@types/cookie": "^0.6.0",
-    "@types/node": "^20.17.30",
-    "@types/react": "^19.2.4",
+    "@biomejs/biome": "^2.4.15",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^9.25.0",
-    "typescript": "^5.8.3",
-    "tzdata": "^1.0.44",
-    "wrangler": "^4.90.1"
+    "eslint": "^10.4.0",
+    "typescript": "^6.0.3",
+    "tzdata": "^1.0.49",
+    "wrangler": "^4.94.0"
   }
 }
