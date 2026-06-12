@@ -1,7 +1,5 @@
-"use server";
-
-import {Button} from "@once-ui-system/core";
-import {headers} from "next/headers";
+import { Button } from "@once-ui-system/core";
+import { headers } from "next/headers";
 import {
     formatSupportedPlatform,
     UpdateServerEndpoints,
@@ -46,10 +44,11 @@ export async function DownloadButton(
             : getLabel(platform, cpu, rc);
 
     return (
-        <Button
-            prefixIcon="download"
-            label={label}
-            href={UpdateServerEndpoints.get(platform, cpu, rc)}
-        ></Button>
+        <form action="/api/download" method="get" style={{ display: "contents" }}>
+            <input type="hidden" name="os" value={platform} />
+            <input type="hidden" name="arch" value={cpu} />
+            <input type="hidden" name="rc" value={rc ?? "stable"} />
+            <Button type="submit" prefixIcon="download" label={label} />
+        </form>
     );
 }
