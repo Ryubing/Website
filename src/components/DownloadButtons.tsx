@@ -46,10 +46,14 @@ export async function DownloadButton(
             : getLabel(platform, cpu, rc);
 
     return (
-        <Button
-            prefixIcon="download"
-            label={label}
+        <a
             href={UpdateServerEndpoints.get(platform, cpu, rc)}
-        ></Button>
+            style={{ textDecoration: "none" }}
+        >
+            <Button
+                prefixIcon="download"
+                label={label}
+            ></Button>
+        </a>
     );
 }

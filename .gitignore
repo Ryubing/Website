@@ -8,6 +8,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+.pnpm-store/
 
 # testing
 /coverage
@@ -25,11 +26,13 @@
 
 # debug
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # local env files
 .env*.local
+.env.production
 
 # vercel
 .vercel
@@ -47,3 +50,12 @@ next-env.d.ts
 .wrangler
 .dev.vars*
 !.dev.vars.example
+
+# Cloudflare
+cloudflare-env.d.ts
+
+# IDE
+.vscode/settings.json
+*.swp
+*.swo
+*~

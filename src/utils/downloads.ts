@@ -4,7 +4,7 @@ export type ReleaseChannel = "stable" | "canary" | "kenjinx";
 
 export class UpdateServerEndpoints {
   private static readonly _urlFormat: string =
-    "https://update.ryujinx.app/download/query?os={OS}&arch={ARCH}&rc={RC}" as const;
+    "/api/download?os={OS}&arch={ARCH}&rc={RC}" as const;
 
   public static get(
     platform: SupportedPlatform,
