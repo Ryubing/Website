@@ -69,3 +69,86 @@ export function getDownloadUrlFromUserAgent(
 
   return UpdateServerEndpoints.get(variant.platform, variant.cpu, rc)
 }
+
+// The public UpdateServer instance has its /download/* endpoints disabled
+// (HTTP 418), so download links are resolved straight from the Forgejo
+// releases API instead, mirroring the UpdateServer's own asset matching.
+const forgejoBaseUrl = "https://git.ryujinx.app";
+
+const forgejoRepos: Record<ReleaseChannel, { owner: string; repo: string }> = {
+  stable: { owner: "projects", repo: "Ryubing" },
+  canary: { owner: "Ryubing", repo: "Canary" },
+  kenjinx: { owner: "projects", repo: "Kenji-NX" },
+};
+
+interface ForgejoAsset {
+  name?: string;
+  browser_download_url?: string;
+}
+
+interface ForgejoRelease {
+  tag_name?: string;
+  assets?: ForgejoAsset[];
+}
+
+export function getReleasesPageUrl(rc: ReleaseChannel = "stable"): string {
+  const { owner, repo } = forgejoRepos[rc] ?? forgejoRepos.stable;
+  return `${forgejoBaseUrl}/${owner}/${repo}/releases`;
+}
+
+function matchesVariant(name: string, platform: SupportedPlatform, cpu: SupportedCPUs): boolean {
+  const n = name.toLowerCase();
+
+  switch (platform) {
+    case "win":
+      return n.includes(`win_${cpu}`);
+    case "mac":
+      return n.includes("macos_universal") || n.includes("macos_arm64");
+    case "linux":
+      return n.includes(`linux_${cpu}`) && n.includes(".tar.");
+    case "linuxai":
+      return n.endsWith(`${cpu}.appimage`);
+  }
+}
+
+function pickAssetUrl(
+  assets: ForgejoAsset[],
+  platform: SupportedPlatform,
+  cpu: SupportedCPUs,
+): string {
+  const matches = assets.filter(
+    (a) => a.name && a.browser_download_url && matchesVariant(a.name, platform, cpu),
+  );
+
+  if (matches.length === 0) return "";
+
+  // Canary ships both .zip/.7z and .tar.gz/.tar.xz variants; prefer the most widely supported one.
+  const preferred = matches.find((a) => {
+    const n = (a.name as string).toLowerCase();
+    return n.endsWith(".zip") || n.endsWith(".tar.gz") || n.endsWith(".appimage");
+  });
+
+  return (preferred ?? matches[0]).browser_download_url as string;
+}
+
+export async function resolveDownloadUrl(
+  platform: SupportedPlatform,
+  cpu: SupportedCPUs,
+  rc: ReleaseChannel = "stable",
+): Promise<string> {
+  const { owner, repo } = forgejoRepos[rc] ?? forgejoRepos.stable;
+
+  try {
+    const res = await fetch(`${forgejoBaseUrl}/api/v1/repos/${owner}/${repo}/releases/latest`, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) return getReleasesPageUrl(rc);
+
+    const release: ForgejoRelease = await res.json();
+
+    return pickAssetUrl(release.assets ?? [], platform, cpu) || getReleasesPageUrl(rc);
+  } catch {
+    return getReleasesPageUrl(rc);
+  }
+}

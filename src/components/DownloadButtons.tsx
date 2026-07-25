@@ -4,6 +4,7 @@ import {Button} from "@once-ui-system/core";
 import {headers} from "next/headers";
 import {
     formatSupportedPlatform,
+    resolveDownloadUrl,
     UpdateServerEndpoints,
     SupportedPlatform,
     SupportedCPUs,
@@ -49,7 +50,7 @@ export async function DownloadButton(
         <Button
             prefixIcon="download"
             label={label}
-            href={UpdateServerEndpoints.get(platform, cpu, rc)}
+            href={await resolveDownloadUrl(platform, cpu, rc)}
         ></Button>
     );
 }
