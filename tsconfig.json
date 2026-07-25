@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",                 // Base directory for resolving modules
+    "baseUrl": ".",                  // Base directory for resolving modules
     "paths": {
       "@lib/*": ["src/lib/*"]        // Alias for src/lib folder
     },
@@ -10,7 +10,7 @@
     "lib": ["ESNext", "DOM"]         // Include modern JavaScript and DOM library support
   },
   "include": [
-    ".astro/types.d.ts",            // Keep Astro types
+    ".astro/types.d.ts",             // Keep Astro types
     "**/*",                          // Include everything in the project
     "src/lib/**/*"                   // Explicitly include the src/lib folder
   ],

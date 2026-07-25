@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^22.13.2",
     "sass-embedded": "^1.83.4",
-    "tsx": "^4.19.2"
+    "tsx": "^4.19.2",
+    "wrangler": "^4.114.0"
   }
 }
